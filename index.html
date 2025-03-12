@@ -1,43 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="author" content="astrid delgado rodriguez">
-    <meta name="keywords" content="Carnegie
-    Mellon University, Information Systems">
-    <meta name="Hello, this is a website that teaches you more about me" content="Astrid's professional website">
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <meta name="author" content="Astrid Delgado Rodriguez">
+    <meta name="keywords" content="Carnegie Mellon University, Information Systems">
+    <meta name="description" content="Hello, this what website teaches you more about me">
+
     <title>Astrid Delgado Rodriguez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            font-family: 'Roboto', Arial, sans-serif;
+            padding: 5px;
+            margin:5px;
+        }
+
+        body{
+            background-color: rgb(221, 241, 236);
+        }
+
+        #webname{
+            background-color: seagreen;
+            color: whitesmoke;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav ul{
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .main{
+            text-align: center;
+        }
+
+        h2{
+            color: teal;
+        }
+
+        img{
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer{
+            text-align: center;
+            margin-top: 20px;
+            color:whitesmoke;
+        }
+    </style>
+
 </head>
-<header>
-    <h1>Astrid Delgado-Rodriguez</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="cv.html">CV</a></li>
-            <li><a href="contactme.html">Contact me</a></li>
-            <li><a href="forfun.html">For Fun</a></li>
-
-
-
-
-        </ul>
-
-
-
-
-    </nav>
-</header>
-
-<div class="main">
-    <h2>Hi, My name is Astrid!</h2>
-    <p>image:</p>
-    <img src="https://t3.ftcdn.net/jpg/02/67/73/72/360_F_267737218_0vABBntdJ1tg16Z2db4mZUmeVC1BWrLM.jpg" alt="Description of an Image">
-    <footer>Astrid Delgado - Rodriguez. All rights reserved.</footer>
-</div>
 <body>
+    <header>
+        <h1 id="webname">Astrid Delgado Rodriguez</h1>
+        <nav>
+            <ul>
+                
+                <li><a href="views/cv.html">CV</a></li>
+                <li><a href="views/contactme.html">Contact Me</a></li>
+                <li><a href="views/forfun.html">For Fun</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main">
+        <h2>Hi, My name is Astrid!</h2>
+        <p>Image: </p>
+        <img src="https://t3.ftcdn.net/jpg/02/67/73/72/360_F_267737218_0vABBntdJ1tg16Z2db4mZUmeVC1BWrLM.jpg">
+        <footer>Astrid Delgado Rodriguez. All rights reserved.</footer>
+
+
+
+    </div>
     
 </body>
 </html>
