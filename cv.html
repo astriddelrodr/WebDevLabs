@@ -43,6 +43,12 @@ p {
 text-align: center; 
 }
 
+footer{
+            text-align: center;
+            margin-top: 20px;
+            color:rgb(14, 14, 14);
+        }
+
 a {
 color: #00796b; 
 text-decoration: none; 
@@ -72,5 +78,23 @@ text-decoration: underline; /* underline on hover for link*/
 
 <p>Click below to download my resume:</p>
 <p><a href="/Users/astrid/Downloads/Resume-Astrid-Delgado-Rodriguez.pdf">Click Here</a></p>
+
+<div>
+    <footer>
+        <p>Astrid Delgado Rodriguez. All rights reserved.</p>
+        <p id="copyYear"></p>
+    
+    </footer>
+
+</div>
+
+
+<script>
+    function addYear(){
+    let currentYear = new Date().getFullYear();
+    let yearElement = document.getElementById("copyYear");
+    yearElement.textContent = currentYear;
+}
+</script>
 </body>
 </html>
