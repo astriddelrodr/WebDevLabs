@@ -34,6 +34,7 @@ ul {
 list-style-type: none; 
 padding: 0;
 text-align: center; /* Center the list */
+display:none;
 }
 
 li {
@@ -51,11 +52,28 @@ text-align: center;
 margin-top: 20px;
 color: #666;
 }
+
+button{
+    display:block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #00796b;
+    color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover{
+    background-color: #00695c;
+}
 </style>
 </head>
 <body>
 <h1>For Fun</h1>
 <h2>Things I Love to Do for Fun</h2>
+<button onclick="showList()">Click to see...</button>
 <ul>
 <li>Exploring new hiking trails</li>
 <li>Reading fantasy novels</li>
@@ -69,6 +87,31 @@ color: #666;
 <li>Trying out new recipes</li>
 </ul>
 
-<footer>Astrid Delgado - Rodriguez. All rights reserved.</footer>
+<footer>
+    <p>Astrid Delgado Rodriguez. All rights reserved.</p>
+    <p id="copyYear"></p>
+</footer>
+<script>
+
+    function showList(){
+        const list = document.querySelector('ul');
+        const button = document.querySelector('button');
+
+        if(list && button){
+
+        list.style.display = 'block';
+        button.style.display = 'none';
+        }
+    }
+
+
+    function addYear(){
+    let currentYear = new Date().getFullYear();
+    let yearElement = document.getElementById("copyYear");
+    yearElement.textContent = currentYear;
+}
+
+addYear();
+</script>
 </body>
 </html>
