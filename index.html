@@ -53,7 +53,31 @@
         footer{
             text-align: center;
             margin-top: 20px;
-            color:whitesmoke;
+            color:rgb(14, 14, 14);
+        }
+
+        .bio{
+            text-align: center;
+            margin: 20px;
+        }
+
+        .bio p{
+            font-size: 16px;
+            color: #333;
+        }
+
+        .bio button{
+            padding: 10px 20px;
+            background-color: #00796b;
+            color: whitesmoke;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .bio button:hover{
+            background-color: #00695c;
         }
     </style>
 
@@ -124,7 +148,7 @@ greetingFunc();
     
 
 </head>
-<body>
+<body onload = "addYear()">
     <header>
         <h1 id="webname">Astrid Delgado Rodriguez</h1>
         <nav>
@@ -141,13 +165,24 @@ greetingFunc();
         <h2 id = "greeting"></h2>
         <p>Image: </p>
         <img src="https://t3.ftcdn.net/jpg/02/67/73/72/360_F_267737218_0vABBntdJ1tg16Z2db4mZUmeVC1BWrLM.jpg">
-        <footer>Astrid Delgado Rodriguez. All rights reserved.</footer>
+
+        <div class="bio">
+            <p id = "shortBio"> I am a college student at CMU studying Information Systems. I enjoy many activities.</p>
+            <p id ="fullBio" style = "display:none;">I am a college student at CMU studying Information Systems. I like to design things, and I enjoy summer. My interests include crocheting, working on innovative projects. I also have a passion for creative design and I love taking pictures and spending time outdoors during the summer.</p>
+            <button id = "toggleBio">Read More</button>
+        </div>
+        <footer>
+            <p>Astrid Delgado Rodriguez. All rights reserved.</p>
+            <p id="copyYear"></p>
+
+        </footer>
 
 
 
     </div>
 
-
+<!--JQuery Library-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script defer>
     function greetingFunc(){
 let d = new Date();
@@ -165,6 +200,25 @@ if(h < 12){
 greetingElement.innerHTML = greetingMessage;// updates inner HTML w/ greeting
 }
 greetingFunc();
+
+
+// year function 
+
+function addYear(){
+    let currentYear = new Date().getFullYear();
+    let yearElement = document.getElementById("copyYear");
+    yearElement.textContent = currentYear;
+}
+
+$(document).ready(function(){$('#toggleBio').click(function(){
+    console.log('Button clicked');
+    $('#shortBio').toggle();$('#fullBio').toggle();
+    if($('#fullBio').is(':visible')){$('#toggleBio').text('Read Less');
+    }else{
+     $('#toggleBio').text('Read More');
+    }
+  });
+});
 
 </script>
     
