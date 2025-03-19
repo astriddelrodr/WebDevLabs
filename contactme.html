@@ -70,6 +70,12 @@
             background-color: mintcream;
         }
 
+        .validation-message {
+        color: red;
+        margin-top: 5px;
+        font-size: 0.9em;
+       }
+
 
 
 
@@ -86,12 +92,18 @@
         <form>
             <label for = "name">Name:</label>
             <input type="text" id="name" name="name" required>
+            <div id="nameValidation" class="validation-message"></div>
+
+
 
             <label for="email">Email:</label>
-            <input type="email" id="enail" name="email" required>
+            <input type="email" id="email" name="email" required>
+            <div id="emailValidation" class="validation-message"></div>
 
             <label for="comment">Comment:</label>
             <textarea id="comment" name="comment" rows="5" required> </textarea>
+            <div id="commentValidation" class="validation-message"></div>
+            
 
             <button type = "submit">Send Message</button>
         </form>
@@ -119,31 +131,53 @@
                 <td>1000 Morewood Ave, Pittsburgh,PA</td>
             </tr>
 
-
-
-
-
-
-
-
-
-
-
-
         </table>
 
 
-
-
-
-
-
-
-
-
     </div>
+
    
     <!-- Contact Form-->
+     <script>
+       document.getElementById('contactForm').addEventListener('submit', function(event) { // Correct form ID
+let isValid = true;
+
+// Validate Name
+const nameInput = document.getElementById('name');
+const nameValidation = document.getElementById('nameValidation');
+if (!nameInput.checkValidity()) {
+    isValid = false;
+    nameValidation.textContent = 'Please enter your name.';
+} else {
+    nameValidation.textContent = '';
+}
+
+// Validate Email
+const emailInput = document.getElementById('email'); // Corrected email input ID
+const emailValidation = document.getElementById('emailValidation');
+if (!emailInput.checkValidity()) {
+    isValid = false;
+    emailValidation.textContent = 'Please enter a valid email address.';
+} else {
+    emailValidation.textContent = '';
+}
+
+// Validate Comment
+const commentInput = document.getElementById('comment'); // Ensure this matches the textarea ID
+const commentValidation = document.getElementById('commentValidation'); // Correct spelling and case
+if (!commentInput.checkValidity()) {
+    isValid = false;
+    commentValidation.textContent = 'Please enter your comment.';
+} else {
+    commentValidation.textContent = '';
+}
+
+// Prevent form submission if any field is invalid
+if (!isValid) {
+    event.preventDefault();
+}
+ });
+     </script>
     
 </body>
 </html>
