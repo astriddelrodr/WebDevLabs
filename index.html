@@ -1,43 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="author" content="astrid delgado rodriguez">
-    <meta name="keywords" content="Carnegie
-    Mellon University, Information Systems">
-    <meta name="Hello, this is a website that teaches you more about me" content="Astrid's professional website">
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <meta name="author" content="Astrid Delgado Rodriguez">
+    <meta name="keywords" content="Carnegie Mellon University, Information Systems">
+    <meta name="description" content="Hello, this what website teaches you more about me">
+
     <title>Astrid Delgado Rodriguez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            font-family: 'Roboto', Arial, sans-serif;
+            padding: 5px;
+            margin:5px;
+        }
+
+        body{
+            background-color: rgb(221, 241, 236);
+        }
+
+        #webname{
+            background-color: seagreen;
+            color: whitesmoke;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav ul{
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .main{
+            text-align: center;
+        }
+
+        h2{
+            color: teal;
+        }
+
+        img{
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer{
+            text-align: center;
+            margin-top: 20px;
+            color:rgb(14, 14, 14);
+        }
+
+        .bio{
+            text-align: center;
+            margin: 20px;
+        }
+
+        .bio p{
+            font-size: 16px;
+            color: #333;
+        }
+
+        .bio button{
+            padding: 10px 20px;
+            background-color: #00796b;
+            color: whitesmoke;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .bio button:hover{
+            background-color: #00695c;
+        }
+    </style>
+
+    <script defer>
+    //Internal JS code
+    let x = 5;
+let y = 7;
+let z = x + y;
+console.log(z);
+
+let A = "Hello";
+let B = "world";
+let C = A + B;
+console.log(C);
+
+function SumNPrint(x1,x2){
+    let x3 = x1 + x2;
+
+    console.log(x3)
+}
+
+SumNPrint(x,y);
+SumNPrint(A,B);
+
+// Conditional Statement 
+
+if(C.length > z){
+    console.log(C);
+
+}else if (C.length < z){
+    console.log(z);
+}else{
+    console.log("good job");
+}
+
+// For Loop w/ Arrays 
+
+let L1 = ["Watermelon", "Pineapple", "Pear", "Banana"];
+let L2 = ["Apple", "Banana", "Kiwi", "Orange"];
+
+function findTheBanana(array){
+    array.forEach(function(item){
+        if(item === "Banana"){
+            alert("Banana found");
+        }
+
+    });
+        
+  
+}
+function greetingFunc(){
+let d = new Date();
+let h = d.getHours();
+let greetingElement = document.getElementById("greeting"); // gets h2 element by id 
+let greetingMessage = "";//initializes variable for greeting message 
+
+if(h < 12){
+    greetingMessage = "Good Morning, my name is Astrid"; // updates inner html 
+}else if (h >= 12 && h < 18){
+    greetingMessage = "Good Afternoon, my name is Astrid";
+}else{
+    greetingMessage = "Good Night, my name is Astrid";
+}
+greetingElement.innerHTML = greetingMessage;// updates inner HTML w/ greeting
+}
+greetingFunc();
+  </script>
+    
+
 </head>
-<header>
-    <h1>Astrid Delgado-Rodriguez</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="cv.html">CV</a></li>
-            <li><a href="contactme.html">Contact me</a></li>
-            <li><a href="forfun.html">For Fun</a></li>
+<body onload = "addYear()">
+    <header>
+        <h1 id="webname">Astrid Delgado Rodriguez</h1>
+        <nav>
+            <ul>
+                
+                <li><a href="views/cv.html">CV</a></li>
+                <li><a href="views/contactme.html">Contact Me</a></li>
+                <li><a href="views/forfun.html">For Fun</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main">
+        <h2 id = "greeting"></h2>
+        <p>Image: </p>
+        <img src="https://t3.ftcdn.net/jpg/02/67/73/72/360_F_267737218_0vABBntdJ1tg16Z2db4mZUmeVC1BWrLM.jpg">
+
+        <div class="bio">
+            <p id = "shortBio"> I am a college student at CMU studying Information Systems. I enjoy many activities.</p>
+            <p id ="fullBio" style = "display:none;">I am a college student at CMU studying Information Systems. I like to design things, and I enjoy summer. My interests include crocheting, working on innovative projects. I also have a passion for creative design and I love taking pictures and spending time outdoors during the summer.</p>
+            <button id = "toggleBio">Read More</button>
+        </div>
+        <footer>
+            <p>Astrid Delgado Rodriguez. All rights reserved.</p>
+            <p id="copyYear"></p>
+
+        </footer>
 
 
 
+    </div>
 
-        </ul>
+<!--JQuery Library-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script defer>
+    function greetingFunc(){
+let d = new Date();
+let h = d.getHours();
+let greetingElement = document.getElementById("greeting"); // gets h2 element by id 
+let greetingMessage = "";//initializes variable for greeting message 
+
+if(h < 12){
+    greetingMessage = "Good Morning, my name is Astrid"; // updates inner html 
+}else if (h >= 12 && h < 18){
+    greetingMessage = "Good Afternoon, my name is Astrid";
+}else{
+    greetingMessage = "Good Night, my name is Astrid";
+}
+greetingElement.innerHTML = greetingMessage;// updates inner HTML w/ greeting
+}
+greetingFunc();
 
 
+// year function 
 
+function addYear(){
+    let currentYear = new Date().getFullYear();
+    let yearElement = document.getElementById("copyYear");
+    yearElement.textContent = currentYear;
+}
 
-    </nav>
-</header>
+$(document).ready(function(){$('#toggleBio').click(function(){
+    console.log('Button clicked');
+    $('#shortBio').toggle();$('#fullBio').toggle();
+    if($('#fullBio').is(':visible')){$('#toggleBio').text('Read Less');
+    }else{
+     $('#toggleBio').text('Read More');
+    }
+  });
+});
 
-<div class="main">
-    <h2>Hi, My name is Astrid!</h2>
-    <p>image:</p>
-    <img src="https://t3.ftcdn.net/jpg/02/67/73/72/360_F_267737218_0vABBntdJ1tg16Z2db4mZUmeVC1BWrLM.jpg" alt="Description of an Image">
-    <footer>Astrid Delgado - Rodriguez. All rights reserved.</footer>
-</div>
-<body>
+</script>
     
 </body>
 </html>
